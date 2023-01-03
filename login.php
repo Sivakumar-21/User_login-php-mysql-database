@@ -9,7 +9,7 @@
 <body>
     <div class="container">   
          <div class="heading">
-            <h2>login Form</h2>
+            <h2>login</h2>
         </div> 
 
        <form action="login_process.php" method="post"> 

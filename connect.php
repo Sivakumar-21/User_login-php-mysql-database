@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
     //print_r($_POST);exit;
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password =password_hash ($_POST['password'] ,PASSWORD_DEFAULT);
     $confirmpassword = $_POST['confirmpassword'];
     $phonenumber = $_POST['phonenumber'];
 
