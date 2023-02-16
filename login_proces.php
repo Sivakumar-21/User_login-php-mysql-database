@@ -1,3 +1,4 @@
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -11,21 +12,24 @@ if(isset($_POST['email']) && isset($_POST['password'])){
     $password = $_POST['password'];
 
     if(empty($email)){
-        header("location:login.php?error=Email is Required");
+        header("location:login.php");
         exit();
     }elseif(empty($password)){
-        header("location:login.php?error=password is Required");
+        header("location:login.php");
         exit();
     }else{
         $sql = "SELECT * FROM user_data WHERE email='$email' AND password='$password'";
         $result = mysqli_query($con,$sql);
 
-        if(mysqli_num_rows($result)){
-            $row = mysqli_fetch_assoc($result);
+        if($row = mysqli_fetch_assoc($result)){
+           
             if($row['email']===$email && $row['password']===$password){
+               
+                $_SESSION['id'] = $row['Id'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['username'] = $row['username'];
-                header("location:homepage.php");
+                $_SESSION['password'] = $row['password'];
+                header("location:home.php");
                 exit();
             }
         }

@@ -12,35 +12,37 @@
             <h2>login</h2>
         </div> 
 
-       <form action="login_process.php" method="post"> 
-        <h4><?php
+       <form action="login_proces.php" method="post"> 
+        <?php
+        
        if(isset($_GET['error'])){
         echo $_GET['error'];
        }
-       ?></h4>
+       ?>
       
         <div class="form-control">
                 <label for="#">Email id</label>
-                <input type="email" placeholder="sivakumar85260@gmail.com" id="email" name="email">
+                <input type="email" placeholder="sivakumar85260@gmail.com" id="email" name="email" autocomplete="off">
                 <i class="fa-solid fa-check"></i>
                 <i class="fa-solid fa-exclamation"></i>
                 <small></small>
             </div>
             <div class="form-control">
                 <label for="#">Password</label>
-                <input type="password" placeholder="password" id="password" name="password">
+                <input type="password" placeholder="password" id="password" name="password" >
                 <i class="fa-solid fa-check"></i>
                 <i class="fa-solid fa-exclamation"></i>
                 <small></small>
             </div>
        
 
-            <button type="login" name="login">login</button>
+            <button type="login" name="login" id="login">login</button>
 
             <div style="text-align: center;">You not register<a href="registr.php">Register</a></div>
     
        </form>
         </div> 
+
     <style>
  *{
     padding: 0;

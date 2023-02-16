@@ -9,11 +9,13 @@ if(!$con){
 }
 if(isset($_POST['submit']))
 {
-    //print_r($_POST);exit;
+    // print_r($_POST[]);exit;
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password =password_hash ($_POST['password'] ,PASSWORD_DEFAULT);
-    $confirmpassword = $_POST['confirmpassword'];
+    // $password =$_POST['password'];
+    // $confirmpassword = $_POST['confirmpassword'];
+    $confirmpassword =password_hash ($_POST['confirmpassword'] ,PASSWORD_DEFAULT);
     $phonenumber = $_POST['phonenumber'];
 
     $mysql_query = "INSERT INTO user_data (username,email,password,confirmpassword,phonenumber)
